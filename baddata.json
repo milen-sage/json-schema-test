@@ -1,6 +1,1 @@
-{
-  "assay":
-  {
-    "value": "foo"
-  }
-}
+{"assay": "foo"}

@@ -3,7 +3,23 @@
   "type": "object",
   "properties": {
     "assay": {
-      "$ref": "definitions.json#/assay"
+      "$ref": "#/definitions/assay"
+    }
+  },
+  "definitions": {
+    "assay": {
+      "anyOf": [
+        {
+          "const": "rnaSeq",
+          "description": "RNA Sequencing measurements",
+          "source": "http://purl.obolibrary.org/obo/OBI_0001271"
+        },
+        {
+          "const": "ChIPSeq",
+          "description": "Chromatin immuno-precipitation followed by sequencing",
+          "source": "http://purl.obolibrary.org/obo/OBI_0000716"
+        }
+      ]
     }
   }
 }
