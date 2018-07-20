@@ -4,7 +4,8 @@
 
 ## the jsonvalidate package wraps a library that doesn't support recent versions
 ## of the JSON schema spec (https://github.com/ropensci/jsonvalidate/issues/2).
-## recommend https://www.jsonschemavalidator.net/ in the meantime.
+## recommend https://www.jsonschemavalidator.net/ or ajv-cli (instructions for
+## latter in README.md)
 
 install.pakages("jsonvalidate")
 library("jsonvalidate")
