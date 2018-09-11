@@ -1,4 +1,4 @@
 {
-  "myassay": "ChIPSeq",
+  "assay": "ChIPSeq",
   "assayTarget":"H3K9me3"
 }
