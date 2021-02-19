@@ -1,0 +1,9 @@
+{
+"speciesCategory":"animal",    
+"animalSpecies": "mouse",
+"ratStrain": "Brattleboro",
+"mouseStrain": "SCID",
+"vitalStatus":"dead",
+"rodentCoatColor": "gray",
+"age":"1"
+}

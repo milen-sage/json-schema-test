@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "animal",
+  "title": "animal",
+  "type": "object",
+  "properties": {
+    "animalSpecies": {
+      "enum": [
+        "rat",
+        "mouse"
+      ]
+    }
+  },
+  "required": [
+    "animalSpecies"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "animalSpecies": {
+            "enum": [
+              "rat"
+            ]
+          }
+        },
+        "required": [
+          "animalSpecies"
+        ]
+      },
+      "then": {
+        "allOf":[
+         {"$ref":"rat.json"}
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "animalSpecies": {
+            "enum": [
+              "mouse"
+            ]
+          }
+        },
+        "required": [
+          "animalSpecies"
+        ]
+      },
+      "then": {
+        "allOf":[
+         {"$ref":"mouse.json"}
+        ]
+      }
+    }
+  ]
+}

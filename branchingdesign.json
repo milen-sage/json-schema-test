@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "branchingdesign",
+  "title": "branchingdesign",
+  "type": "object",
+  "properties": {
+    "speciesCategory": {
+      "enum": [
+        "animal",
+        "human"
+      ]
+    }
+  },
+  "required": [
+    "speciesCategory"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "speciesCategory": {
+            "enum": [
+              "animal"
+            ]
+          }
+        },
+        "required": [
+          "speciesCategory"
+        ]
+      },
+      "then": {
+        "allOf":[
+         {"$ref":"animal.json"}
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "speciesCategory": {
+            "enum": [
+              "human"
+            ]
+          }
+        },
+        "required": [
+          "speciesCategory"
+        ]
+      },
+      "then": {
+        "allOf":[
+         {"$ref":"human.json"}
+        ]
+      }
+    }
+  ]
+}
