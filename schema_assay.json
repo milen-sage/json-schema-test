@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id":"http://example.com/schema_assay.json",
+  "title": "experiment",
+  "type": "object",
+  "properties": {
+    "resourceType": {
+      "$ref": "definitions.json#/definitions/resourceType"
+    },
+    "assay": {
+      "$ref": "definitions.json#/definitions/assay"
+    },
+    "assayTarget": {
+      "$ref": "definitions.json#/definitions/assayTarget"
+    },
+    "species": {
+      "$ref": "definitions.json#/definitions/species"
+    },
+    "organ": {
+      "$ref": "definitions.json#/definitions/organ"
+    },
+    "tissue": {
+      "$ref": "definitions.json#/definitions/tissue"
+    },
+    "cellType": {
+      "$ref": "definitions.json#/definitions/cellType"
+    },
+    "fileFormat": {
+      "$ref": "definitions.json#/definitions/fileFormat"
+    },
+    "dataType": {
+      "$ref": "definitions.json#/definitions/dataType"
+    },    
+    "dataSubtype": {
+      "$ref": "definitions.json#/definitions/dataSubtype"
+    },
+    "specimenID": {
+      "$ref": "definitions.json#/definitions/specimenID"
+    },
+    "specimenIdSource": {
+      "$ref": "definitions.json#/definitions/specimenIdSource"
+    },
+    "individualID": {
+      "$ref": "definitions.json#/definitions/individualID"
+    },
+    "individualIdSource": {
+      "$ref": "definitions.json#/definitions/individualIdSource"
+    },
+    "grant": {
+      "$ref": "definitions.json#/definitions/grant"
+    },
+    "study": {
+      "$ref": "definitions.json#/definitions/study"
+    },
+    "consortium": {
+      "$ref": "definitions.json#/definitions/consortium"
+    },
+    "isModelSystem": {
+      "$ref": "definitions.json#/definitions/isModelSystem"
+    }
+  },
+  "required": [
+    "resourceType", "assay", "species", "organ", "tissue", "cellType", "fileFormat", "dataType", "dataSubtype", "specimenID", "individualID", "grant", "study", "consortium", "isModelSystem", "specimenIdSource", "individualIdSource"
+  ],
+  "anyOf": [
+    {
+      "not": {
+        "properties": {
+          "assay": {
+            "enum": [
+              "ChIPSeq"
+            ]
+          }
+        },
+        "required": [
+          "assay"
+        ]
+      }
+    },
+    {
+      "required": [
+        "assayTarget"
+      ]
+    }
+  ]
+}
