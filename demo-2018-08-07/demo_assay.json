@@ -1,4 +1,5 @@
 {
-  "myassay": "ChIPSeq",
+  "resourceType":  "experimentalData",
+  "assay": "ChIPSe",
   "assayTarget":"H3K9me3"
 }
